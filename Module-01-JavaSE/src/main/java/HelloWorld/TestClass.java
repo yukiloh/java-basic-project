@@ -1,12 +1,13 @@
 package HelloWorld;
 
+import org.junit.jupiter.api.Test;
+
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
-public class Test{
+public class TestClass {
     /*使用seed打印helloworld*/
     public static void main(String ... args) {
         System.out.println(randomString(-229985452)+' '+randomString(-147909649));
@@ -24,7 +25,7 @@ public class Test{
         return sb.toString();
     }
 
-    @org.junit.Test
+    @Test
     public void test(){
         /*日期转毫秒值*/
         String str_date1 = "2013-4-25";

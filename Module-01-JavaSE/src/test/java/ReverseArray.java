@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class 倒置数组{
+public class ReverseArray{
     //倒置一个数组
     
     public void main(String[] args){

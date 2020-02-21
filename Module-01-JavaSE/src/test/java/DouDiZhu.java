@@ -7,15 +7,17 @@ public class DouDiZhu {
 
         //3人斗地主
         //组牌
-        HashMap<Integer,String> hashMapPokerPool = new HashMap();
-        List<String> pokerTpye = List.of("黑桃","红桃","草花","方块");
+        HashMap<Integer,String> hashMapPokerPool = new HashMap<>();
+        //JDK9
+        List<String> pokerType = List.of("黑桃","红桃","草花","方块");
         List<String> pokerNumNormal = List.of("A","2","3","4","5","6","7","8","9","10","J","Q","K");
         List<String> pokerNumSpecial = List.of("JOKER","joker");
+
         ArrayList<String> pokerValue = new ArrayList<>();
 
         for (int i = 0; i < 4; i++) {
             for (int i1 = 0; i1 < 13; i1++) {
-                String str = pokerTpye.get(i) + pokerNumNormal.get(i1);
+                String str = pokerType.get(i) + pokerNumNormal.get(i1);
                 pokerValue.add(str);
             }
         }

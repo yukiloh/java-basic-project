@@ -2,7 +2,7 @@
 
 //判断1~100内的质数
 
-public class 质数{
+public class PrimeNumber {
     public static void main(String[] args){
         int j;
         int count = 0;

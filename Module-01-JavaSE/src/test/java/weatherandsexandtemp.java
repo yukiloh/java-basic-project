@@ -63,7 +63,7 @@ public class weatherandsexandtemp {
 
 
 // // Scanner的用法
-// // public class Test {
+// // public class TestClass {
 // // 	public static void main(String[] args) {
 // // 		java.util.Scanner s = new java.util.Scanner(System.in);
 // // 		String str = s.next();
