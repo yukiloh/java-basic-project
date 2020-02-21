@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title>Title</title>
+
+    <style>
+        td{
+            border: 1px solid rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write("<table border='1' align='center'>");
+        for (let index = 1; index <=9; index++) {
+            document.write("<tr>");
+            for (let index2 = 1; index2 <= index; index2++) {
+                document.write("<td>"+index+"*"+index2+"="+index*index2+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"</td>");
+                }
+            document.write("</tr><br>")
+            }
+        document.write("</table>")
+    </script>
+<br>
+</body>
+</html>

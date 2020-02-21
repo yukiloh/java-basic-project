@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title>Title</title>
+
+    <style>
+ 
+
+    </style>
+
+
+
+</head>
+
+
+<body>
+
+<div>
+    <button onclick="myVar = setInterval(() => {changePic()}, 500)"> run</button>
+    <button onclick="clearInterval(myVar)">stop</button>
+    <input type="button" value="Go bing" id="go">
+</div>
+    
+<div>
+    <img id="img1" src="../Pictures/01.jpg" alt="" width="10%">
+</div>
+
+
+
+
+
+
+
+    
+    <script>
+        //前往bing
+        var href = Location.href;   
+        var go = document.getElementById("go");
+        go.onclick = function() {
+            window.location = "http://www.bing.com/";       //注意书写格式
+        }
+        
+
+        //轮播图的展示
+        var num = 1;         
+        function changePic(){
+            num++;
+            if (num >2) {
+                num = 1;
+            }
+            var img = document.getElementById("img1");
+            img.src = "../Pictures/0"+num+".jpg";
+        };
+        
+        
+        // document.getElementById("btn").onclick = function stop() {
+        //     clearInterval(id1);
+        // }
+
+
+        
+        
+
+        
+        
+        // var r = window.confirm("请按按钮");  //确认，传入的是提示语句，返回布尔值
+        // if (r == true) {
+        //     x = "您按了确认！";
+        // } else {
+        //     x = "您按了取消！";
+        // }
+        // alert(x);
+
+        // var p = prompt("are you ok");    //prompt 提示，传入的是提示语句，返回的p是输入栏中的内容
+        // document.write(p);
+     </script>
+</body>
+</html>

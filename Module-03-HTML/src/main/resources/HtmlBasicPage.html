@@ -1,0 +1,160 @@
+<!DOCTYPE html>     <!--html5专用格式-->
+<html lang="zh">
+<head>      <!--头标签-->
+    <meta charset="UTF-8">      <!--定义页面编码格式-->
+    <title>BasicPage</title>    <!--页面的标签名-->
+
+</head>
+
+<body>      <!--身体部分-->
+
+<p>     <!--段落标签-->
+    <h1>页面标题</h1>
+</p>
+
+
+<hr>        <!--水平线-->
+
+<div>       <!--关于div和span,div理解为块,会换行  而span是行内,并不会换行,适用性更强-->
+    <img src="Pictures/5520057390157306E9.jpg" width="10%">
+</div>
+
+<div>
+    <ol>        <!--列表的有序标签-->
+        <li>第一个</li>
+        <li>第二个</li>
+    </ol>
+</div>
+
+<div>
+    <ul>        <!--无序标签-->
+        <li>第1个</li>
+        <li>第2个</li>
+    </ul>
+</div>
+
+<span>
+    <a href="https://www.bing.com">     <!--链接标签,记得写上http://-->
+    这是去往bing的链接
+    </a>
+</span>
+
+<div>
+    <table border="1" width="50%" cellpadding="1" cellspacing="1" bgcolor="pink" align="left">     <!--表格标签-->
+        <tr>
+            <th>单元格标题1</th>     <!--自带居中、加粗-->
+            <th colspan="2">单元格标题2 列合并</th>
+
+        </tr>
+
+        <tr>
+            <td rowspan="2">单元格内容1 行合并</td>
+            <td align="middle">单元格内容2会居中</td>
+            <td >单元格内容3</td>
+        </tr>
+        <tr>
+            <td >单元格内容4</td>
+            <td >单元格内容5</td>
+            </td>
+        </tr>
+    </table>
+</div><br><br><br>
+
+
+                        <!--get会更快,但是post更安全,适用于用户名密码-->
+                        <!--get会体现在地址栏-->
+<div><!--action 提交至指定页面;method 指定提交方式-->
+    <form action="#" method="get">      <!--表单标签,只有包裹再表单内的才可以被提交-->
+
+        <br>
+
+        <label for="username">用户名：</label><input type="text" placeholder="输入用户名,例如蔡徐坤" name="username" id="username"><br>
+        <!--label 点击"用户名"后会跳转到相应(id = "")的输入框内-->                           <!--name是input元素的名称,id是label的名称-->
+                                                            <!--placeholder 提醒内容-->
+        <label for="password">密码&nbsp&nbsp&nbsp：</label><input type="password" placeholder="输入密码,例如ikunnmsl" name="password" id="password" ><br>
+                                                            <!--type password,可以隐藏输入内容-->
+
+        <!--单选框-->
+        <label for="sex_man">男</label><input type="radio" value="man" name="sex" id="sex_man">
+                                            <!--radio 单选框功能-->
+        <label for="sex_female">女</label><input type="radio" value="female" name="sex" id="sex_female">
+        <label for="sex_unknow">未知</label><input type="radio" value="unknow" name="sex" id="sex_unknow" checked><br>
+                                                                            <!--此处name需要一致-->  <!--checked 默认选中-->
+
+        <!--复选框-->
+        <label for="hobby_sing">唱</label><input type="checkbox" value="sing" name="hobby" id="hobby_sing" checked>
+                                                <!--checkbox 复选框功能-->
+        <label for="hobby_jump">跳</label><input type="checkbox" value="jump" name="hobby" id="hobby_jump"checked>
+        <label for="hobby_rap">rap</label><input type="checkbox" value="rap" name="hobby" id="hobby_rap" checked>
+        <label for="hobby_play_basketball">打篮球</label><input type="checkbox" value="女" name="hobby" id="hobby_play_basketball" checked><br>
+
+        <!--上传文件-->
+        <input type="file" name="file"><br>
+
+        <!--选择日期-->
+        <input type="date" name="date"><br>
+
+        <!--数字的应用-->
+        <input type="number" name="number"><br>
+
+        <!--选择邮箱-->
+        输入邮箱:<input type="email" name="email"><br>
+
+        <!--取色器-->
+        选择颜色:<input type="color" name="color"><br>
+
+        <!--隐藏区域-->
+        <input type="hidden" name="hidden"><br>
+
+        <!--提交-->
+        <input type="submit" value="submit">
+                                <!--value是指显示的按钮的内容-->
+
+        <!--按钮-->
+        <input type="button" value="巴腾"><br>
+
+        <!--图片按钮-->
+        <input type="image" src="Pictures/5520057390157306E9.jpg" width="5%">
+
+
+
+        <p>         <!--一个通过表格的注册练习-->
+        <div align="center">一个综合的表格演示</div>
+
+        <div>
+            <table border="1" width="30%" cellpadding="1" cellspacing="1" bgcolor="pink" align="center">     <!--表格标签-->
+                <tr>
+                    <th colspan="2">注册</th>
+                </tr>
+
+                <tr>
+                    <th width="20%" ><label for="username">用户名：</label></th>
+                    <th align="left" width=" 80%"><input type="text" placeholder="输入用户名,例如蔡徐坤" name="username" id="username"></th>
+                </tr>
+                <tr>
+                    <th width="20%" ><label for="password">密码&nbsp&nbsp&nbsp：</label></th>
+                    <th align="left" width=" 80%"><input type="password" placeholder="输入密码,例如ikunnmsl" name="password" id="password" ></th>
+                </tr>
+            </table>
+        </div>
+        </p><br><br><br>
+    </form>
+</div>
+
+
+
+
+</body>
+
+
+
+
+
+
+<footer>        <!--脚部分-->
+
+
+
+</footer>
+
+</html>

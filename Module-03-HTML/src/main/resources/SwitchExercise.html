@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title>Title</title>
+    <!-- 一个通过点击来控制图片切换的练习 -->
+    <!-- 1.获取图片对象 -->
+    <!-- 2.绑定点击事件 -->
+    <!-- 3.点击，切换图片。if is true，click let false -->
+
+    <style>
+        #hh{margin:0 auto;margin-top: 200px; margin-left: 320px;} 
+    </style>
+
+</head>
+
+<body>
+
+<img id="hh" src="Pictures\01.jpg"  width="30%">    <!-- 初始图片 -->
+
+<script>
+    var pic = document.getElementById("hh");    /* 建立对象，id调用初始图片 */
+    var flag = false;   /* 初始化flag */
+
+    pic.onclick = function(){       /* 建立点击对象 */
+        if (flag){                  /* 如果是真，则修改srt，并修改flag为false */
+            pic.src = "Pictures\\01.jpg";  /* win下需要\\否则路径无法识别 */
+            flag = false;
+        }else{
+            pic.src = "Pictures\\02.jpg";
+            flag = true;
+        }
+    }
+    
+</script>
+</body>
+</html>

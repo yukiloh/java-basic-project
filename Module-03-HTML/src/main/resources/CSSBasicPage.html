@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <!--这是一个演示css基础功能的练习,css3种使用方式:1.内联样式、2.内部样式、3.外部样式-->
+    <meta charset = "UTF-8">
+    <title>Title</title>
+
+
+<!--            2.内部样式-->
+        <style>
+            #id{color:blue;}    /* id选择器的用法,原来css的注释时这么写的...*/
+            div{color:gray;}     
+            .cls{color:red}
+            .cls#join{color: blueviolet;font-size: 20px;background: aquamarine; width: 150px;text-align: center;}
+            #box{margin: 300px;margin-left: 0px;margin-top: 0px;padding: 100px;border: 2px solid red}
+            #innerbox{border: 2px solid yellowgreen;padding: 50px;text-align: center}
+
+        </style>
+
+<!--        3.外部样式-->
+        <link rel="stylesheet" type="text/css" href="css/test.css"/>
+
+<!--            外部样式此种写法也可以-->
+    <!--    <style>-->
+    <!--                @import "css/test.css";-->
+    <!--    </style>-->
+</head>
+
+<body>
+    <!--1.内联样式 直接使用在body内-->
+<!--    <div style="color:red;">css test</div>-->
+                <!--键：值-->
+
+    <div id="id"> id选择器 </div>  <!--展示效果文字-->
+    <!--这里使用了id选择器-->
+
+
+    <!--下面展示其他效果-->
+    <p>普通内容</p>
+    <div>元素选择器1</div>            <!--元素选择器,选择了全部div属性的内容-->
+    <div>元素选择器2</div>
+    <div class="cls">类选择器</div>         <!--类选择器-->
+
+    <div id="prop_"> 字体</div>
+
+    <div id="join" class="cls">交集选择器</div>
+    <div id="box"><dir id="innerbox">盒子属性</dir></div>
+
+<script>
+    document.write("fuck!")
+</script>
+</body>
+</html>
+
+
+
+
+

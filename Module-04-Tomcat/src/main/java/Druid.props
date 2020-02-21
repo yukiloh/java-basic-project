@@ -1,0 +1,12 @@
+<!--  Druid 数据库连接池 -->
+driverClassName = com.mysql.cj.jdbc.Driver
+url = jdbc:mysql:///db1?serverTimezone=UTC
+username = root
+password = 111111
+
+#初始化连接数量    一开始是生成的连接数
+initialSize = 1
+#最大连接数          如连接数超过初始数量，会继续生成并达到最大的连接数
+maxActive = 10
+最大等待时间
+maxWait = 3000

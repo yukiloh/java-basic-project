@@ -6,7 +6,13 @@
 
     <groupId>com.example</groupId>
     <artifactId>javabasic</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>Module-01-JavaSE</module>
+        <module>Module-02-JDBC</module>
+        <module>Module-03-HTML</module>
+    </modules>
 
 
 </project>
