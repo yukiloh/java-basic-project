@@ -12,6 +12,7 @@
         <module>Module-01-JavaSE</module>
         <module>Module-02-JDBC</module>
         <module>Module-03-HTML</module>
+        <module>Module-05-Guava</module>
     </modules>
 
 
