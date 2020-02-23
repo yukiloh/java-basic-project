@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 //preconditions 预判结果
-class Exercise03Preconditions {
+class Exercise003Preconditions {
 
     @Test
     void test01(){

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 //splitter 切割字符串为集合
-class Exercise02Splitter {
+class Exercise002Splitter {
 
     @Test
     void test01(){

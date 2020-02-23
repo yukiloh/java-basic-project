@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 //joiner 拼接集合中的元素
-class Exercise01Joiner {
+class Exercise001Joiner {
 
     //补充：asList只能塞入包装类型;    返回的是视图类型,无法再进行修改(remove,add等) java.lang.UnsupportedOperationException
     private final List<String> stringList = Arrays.asList("google","guava","java","scala","kafka");
@@ -59,12 +59,12 @@ class Exercise01Joiner {
         System.out.println(Joiner.on(", ").withKeyValueSeparator(':').join(stringMap));
     }
 
-    //Files工具类
+    //Files工具类的一瞥
     @Test
     void test02(){
 
         final String path = "/";    //  F:\
-        final String filePath = "F:\\Code\\Java\\java-basic\\Module-05-Guava\\src\\test\\java\\demo01\\Exercise01Joiner.java";
+        final String filePath = "F:\\Code\\Java\\java-basic\\Module-05-Guava\\src\\test\\java\\demo01\\Exercise001Joiner.java";
 
         System.out.println(Files.isDirectory().test(new File(path)));
         System.out.println(Files.isFile().test(new File(filePath)));
@@ -74,4 +74,5 @@ class Exercise01Joiner {
 
     //其他补充,guava也可以通过自己的方法来生成toString(),MoreObjects.toStringHelper(this)
     //或者hashCode(),Objects.hashCode
+    //但idea有快捷键了
 }
