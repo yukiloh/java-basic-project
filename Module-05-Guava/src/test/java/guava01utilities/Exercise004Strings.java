@@ -1,9 +1,14 @@
-package demo01;
+package guava01utilities;
 
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Charsets;
 import com.google.common.base.Strings;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.primitives.Ints;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+import java.util.List;
 
 //Strings and char
 class Exercise004Strings {
@@ -21,9 +26,9 @@ class Exercise004Strings {
         System.out.println("output: "+Strings.isNullOrEmpty("")+" "+Strings.isNullOrEmpty(null));
 
         //打印共同的前缀(单个字符)
-        System.out.println("output: "+Strings.commonPrefix("adc","adc"));
+        System.out.println("output: "+Strings.commonPrefix("aadc","aabc"));
         //共同的后缀
-        System.out.println("output: "+Strings.commonSuffix("abc","adc"));
+        System.out.println("output: "+Strings.commonSuffix("abcc","adcc"));
         //如果不相同则输出空字符串
         System.out.println("output: "+Strings.commonPrefix("abd","bdc"));
 
@@ -37,7 +42,7 @@ class Exercise004Strings {
     }
 
 
-    //char相关
+    //charset,charMatcher
     @Test
     void test02(){
         //快速返回一个指定的charset类型
@@ -58,4 +63,6 @@ class Exercise004Strings {
         System.out.println(CharMatcher.is('a').countIn("aaccadafsfsfasdfasfasfasfasdfs"));
 
     }
+
+
 }

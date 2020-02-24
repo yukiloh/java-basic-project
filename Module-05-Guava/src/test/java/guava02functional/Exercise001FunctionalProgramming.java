@@ -1,4 +1,4 @@
-package demo01;
+package guava02functional;
 
 
 import com.google.common.base.*;
@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 //functional programming 函数式编程的一些接口,和接口对应工具类的用法
 //函数式编程的好处:在遍历过程中可以自定义function,而不用重复的去遍历集合
-public class Exercise005FunctionalProgramming {
+public class Exercise001FunctionalProgramming {
 
 
     //Function接口的演示,接口下只有2个方法
@@ -26,8 +26,7 @@ public class Exercise005FunctionalProgramming {
                 Preconditions.checkNotNull(input, "not null");
                 return input.length();
             }
-
-            //另有一个equals,不演示
+            //另有一个equals方法,不演示
         };
 
         System.out.println(countChar.apply("hello world"));

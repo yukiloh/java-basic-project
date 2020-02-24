@@ -1,4 +1,4 @@
-package demo01;
+package guava01utilities;
 
 import com.google.common.base.Splitter;
 import org.junit.jupiter.api.Test;

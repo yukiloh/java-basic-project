@@ -1,4 +1,4 @@
-package demo01;
+package guava01utilities;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -6,7 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-//preconditions 预判结果
+//preconditions 预判结果,对传入的参数进行判断,抛出异常
+//补充:guava中对null值得处理95%都采用快速失败的方式
 class Exercise003Preconditions {
 
     @Test
