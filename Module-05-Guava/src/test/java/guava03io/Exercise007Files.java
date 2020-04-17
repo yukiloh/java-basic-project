@@ -1,15 +1,12 @@
-package demo01;
+package guava03io;
 
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Joiner;
-import com.google.common.collect.ImmutableList;
+import com.google.common.graph.Traverser;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;
-import com.google.common.io.CharSource;
-import com.google.common.io.FileWriteMode;
-import com.google.common.io.Files;
-import com.google.common.io.LineProcessor;
+import com.google.common.io.*;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -17,12 +14,28 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 
 //File
-public class Exercise007 {
+public class Exercise007Files {
 
     private final String SOURCE_FILE = "C:\\Users\\Ash\\Documents\\Code\\JAVA\\java-basic-project\\Module-05-Guava\\src\\main\\resources\\test.txt";
     private final String TARGET_FILE = "C:\\Users\\Ash\\Documents\\Code\\JAVA\\java-basic-project\\Module-05-Guava\\src\\main\\resources\\target.txt";
+
+
+
+    //Files工具类的一瞥
+    @Test
+    void test00(){
+
+        final String path = "/";    //  F:\
+        final String filePath = "F:\\Code\\Java\\java-basic\\Module-05-Guava\\src\\test\\java\\demo01\\Exercise001Joiner.java";
+
+        System.out.println(Files.isDirectory().test(new File(path)));
+        System.out.println(Files.isFile().test(new File(filePath)));
+
+    }
+
 
     //copy 复制文件
     @Test
@@ -57,7 +70,9 @@ public class Exercise007 {
     }
 
 
-    //读取文件中的内容
+    // 谨记,source用于读取,sink用于写入!
+
+    //利用asCharSource/asByteSource 读取文件中的内容
     @Test
     void test03() throws IOException {
         //读取为字符串数组
@@ -66,7 +81,6 @@ public class Exercise007 {
         //用于展示结果,每个数组连接使用换行符
         String result = Joiner.on("\n").join(strings);
         System.out.println(result);
-
 
 
         //或者直接读取全部(CharSource),然后再readLines读取
@@ -95,11 +109,15 @@ public class Exercise007 {
         System.out.println(Arrays.toString(list.toArray()));
 
 
+        //对于非char文件,可以用byteSource来读取
+        ByteSource byteSource = Files.asByteSource(new File(SOURCE_FILE));
+        System.out.println(Arrays.toString(byteSource.read()));
+
     }
 
-    //write 写入文件
+    //利用asCharSink/asByteSink 写入文件
     @Test
-    void test06() throws IOException {
+    void test05() throws IOException {
         String testPath = "C:\\Users\\Ash\\Documents\\Code\\JAVA\\java-basic-project\\Module-05-Guava\\src\\main\\resources\\test2.txt";
         File testFile = new File(testPath);
         testFile.deleteOnExit();    //JVM退出时删除文件
@@ -112,7 +130,43 @@ public class Exercise007 {
 
         //测试文件内容
         System.out.println(Files.asCharSource(testFile, Charsets.UTF_8).read());
+
+
+        //补充,关于touch,类似于Linux的touch,会进行文件的创建,并修改 最后修改时间 为现在(如果失败则报错)
+        //Files.touch(testFile);
+
     }
+
+
+    //从charSource向charSink复制
+    @Test
+    void test07() throws IOException {
+        File sourceFile = new File(SOURCE_FILE);
+        File targetFile = new File(TARGET_FILE);
+        targetFile.deleteOnExit();
+
+        CharSource charSource = Files.asCharSource(sourceFile, Charsets.UTF_8);
+        CharSink charSink = Files.asCharSink(targetFile, Charsets.UTF_8);
+
+        System.out.println(charSource.copyTo(charSink));  //会返回字符数
+        System.out.println(Files.asCharSource(targetFile, Charsets.UTF_8).read());  //打印查看内容
+    }
+
+
+    //其他charSource的补充
+    @Test
+    void test08() throws IOException {
+        //warp:将char转换为charSource
+        CharSource abcd = CharSource.wrap("abcd");
+        CharSource efgh = CharSource.wrap("efgh");
+
+        //concat 拼接任意CharSource
+        CharSource newCharSourch = CharSource.concat(abcd, efgh);
+        System.out.println(newCharSourch.read());
+
+
+    }
+
 
 
     //获取文件的hash值
@@ -122,4 +176,32 @@ public class Exercise007 {
         HashCode hashCode = Files.asByteSource(file).hash(Hashing.sha256());
         System.out.println(hashCode);
     }
+
+
+    //遍历文件夹
+    @Test
+    void test06() throws IOException {
+        File root = new File("C:\\Users\\Ash\\Documents\\Code\\JAVA\\java-basic-project\\Module-05-Guava\\src");
+
+        Traverser<File> fileTraverser = Files.fileTraverser();
+        //遍历树形结构时,会分化出 深度优先 和 广度优先
+        //深度优先又可以分化出先序遍历(pre order)和后序遍历(post order)
+        //先序遍历 pre order: 先根后左再右
+        //后序遍历 post order: 先左后右再根       //补充:中序遍历:先左,再根,后右
+        Iterable<File> files = fileTraverser.depthFirstPreOrder(root);
+
+        //通过获取的迭代来遍历,利用Consumer来制定文件筛选规则
+        files.forEach(new Consumer<File>() {
+            @Override
+            public void accept(File file) {
+                if (file.isFile()) {
+                    System.out.println(file.toString());
+                }
+            }
+        });
+
+        //补充:据说以前fileTraverser是利用双向队列
+    }
+
+
 }

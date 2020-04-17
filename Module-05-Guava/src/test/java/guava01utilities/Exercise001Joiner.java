@@ -1,7 +1,6 @@
-package demo01;
+package guava01utilities;
 
 import com.google.common.base.Joiner;
-import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.io.Files;
 import org.junit.jupiter.api.Test;
@@ -22,7 +21,6 @@ class Exercise001Joiner {
     //Array类
     @Test
     void test01(){
-
         //通过on方法,使用分隔符来连接list中的元素; join中可以塞入多个对象/数组对象/迭代
         String result = Joiner.on("!").join(stringList);
         System.out.println(result);
@@ -55,21 +53,11 @@ class Exercise001Joiner {
         ImmutableMap<String, String> stringMap = ImmutableMap.of("hello","world","sun","java");
         System.out.println(stringMap);
 
-        //on:每个kv的分隔符;  wkvs:kv之间的分隔符;
+        //on:每个kv的分隔符;  withKeyValueSeparator:kv之间的分隔符;
         System.out.println(Joiner.on(", ").withKeyValueSeparator(':').join(stringMap));
     }
 
-    //Files工具类的一瞥
-    @Test
-    void test02(){
 
-        final String path = "/";    //  F:\
-        final String filePath = "F:\\Code\\Java\\java-basic\\Module-05-Guava\\src\\test\\java\\demo01\\Exercise001Joiner.java";
-
-        System.out.println(Files.isDirectory().test(new File(path)));
-        System.out.println(Files.isFile().test(new File(filePath)));
-
-    }
 
 
     //其他补充,guava也可以通过自己的方法来生成toString(),MoreObjects.toStringHelper(this)

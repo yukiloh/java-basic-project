@@ -1,6 +1,3 @@
-package demo01;
-
-
 import org.junit.jupiter.api.Test;
 
 //
