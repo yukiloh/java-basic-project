@@ -1,16 +1,9 @@
-import Method.Person;
-
-import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.stream.IntStream;
 
- public class Test {
-
+public class Test {
 
 
     public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
@@ -33,8 +26,6 @@ import java.util.stream.IntStream;
         System.out.println(chars.min().toString());
 
     }
-
-
 
 }
 
