@@ -16,6 +16,7 @@ public class N118Pascal {
 
     }
 
+    //
     public List<List<Integer>> generate(int numRows) {
         int[][] arry = new int[numRows][numRows];
         List<List<Integer>> result = new ArrayList<List<Integer>>();
