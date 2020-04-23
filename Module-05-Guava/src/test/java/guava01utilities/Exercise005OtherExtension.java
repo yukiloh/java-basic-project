@@ -108,6 +108,7 @@ class Exercise005OtherExtension {
         ImmutableList<String> immutableList = ImmutableList.copyOf(arrayList);
         //创建一个不可变map集合
         ImmutableMap<String, String> immutableMap = ImmutableMap.of("a", "aa", "b", "bb");
+
         //不可变集合也可以用于线程安全问题
     }
 
