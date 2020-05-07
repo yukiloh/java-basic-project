@@ -1,5 +1,6 @@
 package IOStream;
 
+import java.beans.Transient;
 import java.io.NotSerializableException;
 
 public class PersonConstructionMethod extends NotSerializableException {
@@ -30,6 +31,10 @@ public class PersonConstructionMethod extends NotSerializableException {
     }
 
 
+    // 不同于关键词transient,@Transient只能作用于方法(官方推荐放在get上)
+    // 该方法所对应的真值(属性)当被编码器导出时(测试了向前端导出json),该真值会被忽视
+    // 原文:A true value for the "transient" attribute indicates to encoders derived from Encoder that this feature should be ignored.
+    @Transient
     public String getSex() {
         return sex;
     }
