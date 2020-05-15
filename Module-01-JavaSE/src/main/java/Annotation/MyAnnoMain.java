@@ -3,6 +3,7 @@ package Annotation;
 import Reflection.Person_Ref;
 
 //一个解析（使用）注解的练习，通过调用注解中的类名和方法名，实现方法的调用
+//2020年5月15日 除了元注解,自定义注解主要通过反射来获取对象的信息,然后实现功能添加.不存在给一个对象加了注解后可以突破大气圈
 @MyAnno(className = "Annotation.DemoMethod",methodName = "show")
 public class MyAnnoMain {
     public static void main(String[] args) throws Exception {

@@ -1,0 +1,11 @@
+看《Effective Java》第三版的时候，看到了其中建议将try-finally替换为try-with-resources。这个语法糖还算有意思，特此成文。
+
+用法辨析
+Java库中有很多资源需要手动关闭，比如InputStream、OutputStream、java.sql.Connection等等。在此之前，通常是使用try-finally的方式关闭资源；Java7之后，推出了try-with-resources声明来替代之前的方式。 try-with-resources 声明要求其中定义的变量实现 AutoCloseable 接口，这样系统可以自动调用它们的close方法，从而替代了finally中关闭资源的功能。
+
+举个栗子，下面是一个复制文件的方法，按照原本try-catch-finally的写法：
+
+作者：聪明叉
+链接：https://www.jianshu.com/p/6adb6dbc4140
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

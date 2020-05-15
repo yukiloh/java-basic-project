@@ -1,5 +1,5 @@
 #JDBC工具类的配置文件
 url = jdbc:mysql:///db1?serverTimezone=UTC
-user = root
+myUser = root
 pswd = 111111
 driver = com.mysql.jdbc.Driver
