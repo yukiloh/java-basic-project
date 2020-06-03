@@ -1,5 +1,6 @@
 package Thread;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 
@@ -15,9 +16,15 @@ public class LockImpl implements Runnable{
             for (int i = 0; i < 100; i++) {
                 threadUsedLock();
                 times++;
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-        }
-        finally {reentrantLock.unlock();    //建议用try&finally的方式来保证unlock的使用
+
+        } finally {
+            reentrantLock.unlock();    //建议用try&finally的方式来保证unlock的使用
         }
     }
 

@@ -2,6 +2,8 @@ package Thread;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 public class ThreadTest {
 
 
@@ -78,5 +80,33 @@ public class ThreadTest {
     }
 
 
+    @Test
+    void testContext2(){
+        //创建一个runnable
+        Runnable runnable = () -> {
+            System.out.println(Thread.currentThread().getName()+"启动");
+            myLock();
+        };
 
+        //创建并启动线程
+        for (int i = 0; i < 5; i++) {
+            new Thread(runnable).start();
+        }
+
+    }
+
+    private ReentrantLock lock = new ReentrantLock(false);   //此处的true来控制是否为公平锁
+    private int count = 0;
+
+    private void myLock() {
+        for (int i = 0; i < 10; i++) {
+            try {
+                lock.lock();
+                count++;
+                System.out.println(Thread.currentThread().getName() + "获得了锁,count: " + count);
+            }finally {
+                lock.unlock();
+            }
+        }
+    }
 }
