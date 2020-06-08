@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Random;
 
 public class TestClass {
-    /*使用seed打印helloworld*/
+    //使用seed打印helloworld
     public static void main(String ... args) {
         System.out.println(randomString(-229985452)+' '+randomString(-147909649));
         //hellow world
@@ -26,17 +26,17 @@ public class TestClass {
     }
 
     @Test
-    public void test(){
-        /*日期转毫秒值*/
+    void test(){
+        //日期转毫秒值
         String str_date1 = "2013-4-25";
         String[] split = str_date1.split("-");
         Calendar calendar = Calendar.getInstance();
         calendar.set(Integer.valueOf(split[0]), Integer.valueOf(split[1]), Integer.valueOf(split[2]), 0, 0, 0);
         System.out.println(calendar.getTimeInMillis());
 
-        /*另一种打印今天日期的方式*/
+        //另一种打印今天日期的方式
         DateFormat dateInstance = DateFormat.getDateInstance(DateFormat.FULL);
         String format = dateInstance.format(new Date());
-        System.out.println(format);     /*2019年10月4日星期五*/
+        System.out.println(format);     //2019年10月4日星期五
     }
 }

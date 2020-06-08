@@ -1,6 +1,6 @@
 package com.example.javase.InnerClass;
 
-public class HerosWeapon {  //weapon类
+public class HeroWeapon {  //weapon类
     private String weaponName;
     private int weaponAtk;
 
@@ -26,11 +26,11 @@ public class HerosWeapon {  //weapon类
         this.weaponAtk = weaponAtk;
     }
 
-    public HerosWeapon(String weaponName, int weaponAtk) {
+    public HeroWeapon(String weaponName, int weaponAtk) {
         this.weaponName = weaponName;
         this.weaponAtk = weaponAtk;
     }
 
-    public HerosWeapon() {
+    public HeroWeapon() {
     }
 }

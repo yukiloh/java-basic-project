@@ -16,7 +16,7 @@ public class CheckTestMain {
         Class<? extends MethodNeedCheck> clazz = methodNeedCheck.getClass();
 
         //3.获取所有方法
-            //先创建字符读取，貌似需要用字符流读取否则会出现乱码？
+        //先创建字符读取，貌似需要用字符流读取否则会出现乱码？
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("bug.txt"), StandardCharsets.UTF_8));
         int count = 0;      //统计bug出现的次数
         for (Method method : clazz.getMethods()) {

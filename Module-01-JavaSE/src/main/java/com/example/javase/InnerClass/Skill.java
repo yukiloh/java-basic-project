@@ -1,5 +1,6 @@
 package com.example.javase.InnerClass;
 
-public interface Skill {        //一个skill的接口
-    void cast();        //抽象方法cast
+//skill的接口
+public interface Skill {
+    void cast();        //接口方法cast
 }

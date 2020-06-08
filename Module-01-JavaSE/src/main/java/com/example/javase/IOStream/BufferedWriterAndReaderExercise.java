@@ -4,7 +4,7 @@ package com.example.javase.IOStream;
 import java.io.*;
 import java.util.HashMap;
 
-//缓冲字符输入/出流的练习（字节流跳过）
+//缓冲字符输入输出流的练习（字节流跳过）
 public class BufferedWriterAndReaderExercise {
     public static void main(String[] args) throws IOException {
 //        bufferedWriterMethod();   //缓冲流写入的自定义方法
@@ -24,7 +24,7 @@ public class BufferedWriterAndReaderExercise {
     }
 
     private static void bufferedReaderMethod() throws IOException {
-        HashMap<String,String > map = new HashMap();        //用hashmap接受1.文字段落
+        HashMap<String,String > map = new HashMap<>();        //用hashmap接受1.文字段落
         BufferedReader br = new BufferedReader(new FileReader("E:\\javatest\\出师表.txt"));        //用缓冲字符输入流读取出师表
         BufferedWriter bw = new BufferedWriter((new FileWriter("E:\\javatest\\出师表2.txt")));     //写入给出师表2
         String line;        //因为br.readLine()读取的是一行String

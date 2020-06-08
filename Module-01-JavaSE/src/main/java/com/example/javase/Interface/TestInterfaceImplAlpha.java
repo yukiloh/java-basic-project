@@ -1,6 +1,6 @@
 package com.example.javase.Interface;
 
-public class TestInterfaceImplAlpha implements TestInterfaceDefaultalpha {
+public class TestInterfaceImplAlpha implements TestInterfaceDefaultAlpha {
     @Override
     public void interfaceDefault() {
 

@@ -18,7 +18,7 @@ public class Random20AndPickEvenText03 {
             int tempRandom = random.nextInt(1000);
             arrayList.add(tempRandom);
         }
-        System.out.println("random arraylist(20):  "+arrayList);//打印看下结果
+        System.out.println("random array list(20):  "+arrayList);//打印看下结果
         //最后传出 arrayList
         return arrayList;
     }
@@ -33,6 +33,6 @@ public class Random20AndPickEvenText03 {
                 count ++;
             }
         }
-        System.out.println("even objber("+count+"):  "+evenArrayList);
+        System.out.println("even object("+count+"):  "+evenArrayList);
     }
 }

@@ -1,6 +1,7 @@
 package com.example.javase.RandomText;
 import java.util.ArrayList;
 import java.util.Random;
+
 //要求：生成6个随机数，添加入集合，并历遍打印
 public class randomText01 {
     public static void main(String[] args) {
@@ -15,9 +16,9 @@ public class randomText01 {
         }
         System.out.println(list);   //打印输出看结果
         //获取集合的长度
-        int listsize = list.size();
+
         //历遍输出每个集合的元素
-        for (int i = 0; i < listsize; i++) {
+        for (int i = 0; i < list.size(); i++) {
             System.out.print(list.get(i)  +  "   ");
         }
     }

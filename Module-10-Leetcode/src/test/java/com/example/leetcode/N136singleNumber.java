@@ -1,8 +1,8 @@
-package com.example.javase.LeetCode;
+package com.example.leetcode;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.HashSet;
 
 public class N136singleNumber {
     /*判断一个数组的不重复数字,返回那个不重复的数字(只会出现2次)*/

@@ -21,27 +21,27 @@ public class innerMainMethod {
 
 
 
-        String heroname = "傻逼";
+        String heroName = "傻逼";
         int heroLevel = 18;
         String weaponName = "shit";
         int weaponAtk = -1;
 
 
         HeroClass hero = new HeroClass();       //实例化hero
-        HerosWeapon weapon = new HerosWeapon(); //实例化weapon
+        HeroWeapon weapon = new HeroWeapon(); //实例化weapon
         weapon.setWeaponName(weaponName);           //给weapon赋值
         weapon.setWeaponAtk(weaponAtk);
 
         hero.setHeroLevel(heroLevel);                  //给hero赋值
-        hero.setHeroName(heroname);
-        hero.setHerosWeapon(weapon);            //给heroWeapon赋值weapon
+        hero.setHeroName(heroName);
+        hero.setHeroWeapon(weapon);            //给heroWeapon赋值weapon
         //======================================================================
 
         //匿名内部类的用法
         HeroArmor heroArmor = new HeroArmor() { //实例化一个匿名的抽象方法
             @Override
             public void armorValue() {
-                System.out.println(heroname+"'s armor = "+10);
+                System.out.println(heroName+"'s armor = "+10);
             }
         };  //这里有个;
         heroArmor.armorValue(); //=10       //调用这个类
@@ -50,7 +50,7 @@ public class innerMainMethod {
         new HeroArmor(){
             @Override
             public void armorValue() {
-                System.out.println("now "+heroname+"'s armor = "+15);
+                System.out.println("now "+heroName+"'s armor = "+15);
             }
         }.armorValue(); //=15
 
@@ -63,7 +63,7 @@ public class innerMainMethod {
 
             @Override
             public void cast() {
-                System.out.println(heroname+" cast somthing!");
+                System.out.println(heroName+" cast somthing!");
             }
         }.cast();
 
@@ -85,9 +85,9 @@ public class innerMainMethod {
 
     }
     public static List<String> addMethod(List<String> list){    //接口List作为返回类型 和 参数的方法
-        list.add("frist");
+        list.add("first");
         list.add("second");
-        list.add("thrid");
+        list.add("third");
         return list;
     }
 }

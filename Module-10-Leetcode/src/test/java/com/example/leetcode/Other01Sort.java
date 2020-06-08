@@ -1,8 +1,10 @@
-package com.example.javase.LeetCode;
+package com.example.leetcode;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Random;
 
 public class Other01Sort {
     /*排序的一点笔记*/

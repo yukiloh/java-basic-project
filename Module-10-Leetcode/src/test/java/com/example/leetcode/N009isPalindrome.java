@@ -1,6 +1,6 @@
-package com.example.javase.LeetCode;
+package com.example.leetcode;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class N009isPalindrome {
     /*判断回文*/
