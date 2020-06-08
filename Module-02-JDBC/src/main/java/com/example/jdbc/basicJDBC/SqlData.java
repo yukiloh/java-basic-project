@@ -1,13 +1,13 @@
-package com.example.jdbc;
+package com.example.jdbc.basicJDBC;
 
-public class GetSQLData {
+public class SqlData {
     private int id;
     private String name;
     private int sex;
     private int score;
     private int id2;
     private String sex2;
-    private String pswd;
+    private String password;
 
 
 
@@ -59,24 +59,24 @@ public class GetSQLData {
         this.sex2 = sex2;
     }
 
-    public void setPswd(String pswd) {
-        this.pswd = pswd;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public GetSQLData(int id, String name, int sex, int score, int id2, String sex2, String pswd) {
+    public SqlData(int id, String name, int sex, int score, int id2, String sex2, String password) {
         this.id = id;
         this.name = name;
         this.sex = sex;
         this.score = score;
         this.id2 = id2;
         this.sex2 = sex2;
-        this.pswd = pswd;
+        this.password = password;
     }
 
-    public String getPswd() {
-        return pswd;
+    public String getPassword() {
+        return password;
     }
 
-    public GetSQLData() {
+    public SqlData() {
     }
 }

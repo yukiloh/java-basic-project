@@ -1,6 +1,6 @@
-package com.example.jdbc;
+package com.example.jdbc.basicJDBC;
 
-import com.example.jdbc.Utils.JDBCDruidUtils;
+import com.example.jdbc.basicJDBC.Utils.JDBCDruidUtils;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 
 import javax.sql.DataSource;
@@ -21,12 +21,8 @@ public class JDBCSQLPoolDruidExercise {
         //通过普通方法调用druid
 //        useDruid();
 
-
         //通过工具类使用druid
         useDruidWithUtils();
-
-
-
     }
 
     private static void useDruidWithUtils() throws SQLException {
@@ -37,13 +33,13 @@ public class JDBCSQLPoolDruidExercise {
         //从工具包中直接获取连接
         connection = JDBCDruidUtils.getConnection();
         //获取预处理pstmt对象
-                //定义sql语句
+        //定义sql语句
         String sql = "SELECT * FROM testtable JOIN testtable_sex ON testtable.`sex` = testtable_sex.`id` ORDER BY testtable.`id` ASC;";
         preparedStatement = connection.prepareStatement(sql);
         //执行sql
         result = preparedStatement.executeQuery();
 
-        List<GetSQLData> all = JDBCMainFullVersion.getAll(result);//遍历打印
+        List<SqlData> all = JDBCMainFullVersion.getAll(result);//遍历打印
         for (int i = 0; i < all.size(); i++) {
             System.out.println(all.get(i).getName()+" "+all.get(i).getSex2()+" "+all.get(i).getScore());    //获得result和普通方法不同,无法打印出list集合
         }
@@ -53,7 +49,7 @@ public class JDBCSQLPoolDruidExercise {
 
     private static void useDruid() throws Exception {
         Properties properties = new Properties();
-        InputStream inputStream = JDBCSQLPoolDruidExercise.class.getClassLoader().getResourceAsStream("com/example/jdbc/Utils/Druid.props");
+        InputStream inputStream = JDBCSQLPoolDruidExercise.class.getClassLoader().getResourceAsStream("com/example/jdbc/basicJDBC/Utils/Druid.props");
         properties.load(inputStream);
 
         //4.通过工厂DruidDataSourceFactory获取数据库连接池对象

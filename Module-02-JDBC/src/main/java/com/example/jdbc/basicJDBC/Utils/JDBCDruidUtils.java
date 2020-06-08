@@ -1,4 +1,4 @@
-package com.example.jdbc.Utils;
+package com.example.jdbc.basicJDBC.Utils;
 
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
@@ -19,28 +19,29 @@ public class JDBCDruidUtils {
     //2.获取连接对象
     //3.释放资源
 
+    //提升dataSource的作用域
+    private static DataSource dataSource;
 
-    private static DataSource dataSource;   //提升ds的作用域
     //通过静态代码块注册驱动,获取连接对象
     static {
         try{
             //1.加载配置文件
             Properties properties = new Properties();
-            InputStream inputStream = JDBCDruidUtils.class.getClassLoader().getResourceAsStream("com/example/jdbc/Utils/Druid.props");
-            properties.load(inputStream);
+            InputStream inputStream = JDBCDruidUtils.class.getClassLoader().getResourceAsStream("druid.props");
+
+            if (inputStream!=null) {
+                properties.load(inputStream);
+            }
 
             //通过工厂DruidDataSourceFactory获取数据库连接池对象
             dataSource = DruidDataSourceFactory.createDataSource(properties);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
-
     //2.创造一个获取连接的方法
-    public static Connection getConnection() throws SQLException {  //获取连接的方法
+    public static Connection getConnection() throws SQLException {
         return dataSource.getConnection();
     }
 

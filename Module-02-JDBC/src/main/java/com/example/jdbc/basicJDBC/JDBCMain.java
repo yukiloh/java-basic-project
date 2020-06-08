@@ -1,10 +1,9 @@
-package com.example.jdbc;
+package com.example.jdbc.basicJDBC;
 
 import java.sql.*;
 
 //这个一个演示 使用jdbc调用数据库的练习,但演示并非完美的方法,有更好的、动态的其他版本
 public class JDBCMain {
-
 
     public static void main(String[] args){
         // JDBC的使用顺序8步

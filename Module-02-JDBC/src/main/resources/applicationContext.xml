@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+    <!--供springJdbc测试案例所使用-->
+    <!-- 配置数据源 -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <!-- 数据库驱动 -->
+        <property name="driverClassName" value="org.mariadb.jdbc.Driver"></property>
+        <!-- 链接数据库的url -->
+        <property name="url" value="jdbc:mysql://192.168.1.90:3306/jwt-test"></property>
+        <!-- 链接数据库的用户名 -->
+        <property name="username" value="root"></property>
+        <!-- 链接数据库的密码     -->
+        <property name="password" value="zou9RYdAGW2MKoBY"></property>
+    </bean>
+    <!-- 配置springJdbc模板 -->
+    <bean id="userDao" class="com.example.jdbc.springJDBC.dao.UserDao">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+</beans>

@@ -1,4 +1,4 @@
-package com.example.jdbc.Utils;
+package com.example.jdbc.basicJDBC.Utils;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,7 +12,6 @@ public class JDBCUtils {
     //1.注册驱动
     //2.获取连接对象
     //3.释放资源
-
 
     //2.获取连接对象
     private static String url;//提升作用域
@@ -29,7 +28,7 @@ public class JDBCUtils {
 //            URL resource = classLoader.getResource("JDBCprop.prop");//加载配置文件中的内容
 
 //            properties.load(new FileReader(resource.getPath()));//获取配置文件中的路径，用FR读取，最后用prop加载配置内容
-            properties.load(new FileReader("E:\\Code\\java-code\\JDBC\\src\\JDBCprop.prop"));//获取配置文件中的路径，用FR读取，最后用prop加载配置内容
+            properties.load(new FileReader("JDBCprop.prop"));//获取配置文件中的路径，用FR读取，最后用prop加载配置内容
 
             url = properties.getProperty("url");    //4个配赋值，
             user = properties.getProperty("user");
