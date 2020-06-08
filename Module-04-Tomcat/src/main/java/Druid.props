@@ -1,4 +1,4 @@
-<!--  Druid 数据库连接池 -->
+# Druid 数据库连接池
 driverClassName = com.mysql.cj.jdbc.Driver
 url = jdbc:mysql:///db1?serverTimezone=UTC
 username = root

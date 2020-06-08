@@ -6,7 +6,8 @@
 
     <groupId>com.example</groupId>
     <artifactId>javase</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <name>javaSE</name>
+    <version>0.01-SNAPSHOT</version>
     <build>
         <plugins>
             <plugin>
@@ -32,6 +33,7 @@
             <version>4.12</version>
             <scope>compile</scope>
         </dependency>
+
     </dependencies>
 
 
