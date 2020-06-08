@@ -8,7 +8,7 @@ public enum  SingletonEnum {
     SingletonEnum() {}  //枚举的构造函数
 
     //对外部提供一个get方法来调用枚举
-    public void method(){
+    public void instanceMethod(){
         System.out.println("hello");
     }
 

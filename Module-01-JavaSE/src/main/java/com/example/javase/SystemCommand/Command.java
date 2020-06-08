@@ -11,13 +11,12 @@ import java.nio.charset.Charset;
 public class Command {
 
     public static void main(String[] args) {
-        printTerminalMessage("/root/v2ray/traffic.sh");   /*查看全部*/
+        printTerminalMessage("/root/v2ray/traffic.sh");
         printTerminalMessage("/usr/bin/v2ray/v2ctl api --server=127.0.0.1:10085 StatsService.GetStats 'name: \"user>>>admin>>>traffic>>>downlink\"'");   /*查看*/
 
     }
 
-
-    /*打印终端信息*/
+    //打印终端信息
     private static String printTerminalMessage(String cmd) {
         StringBuilder result= new StringBuilder();
         try {

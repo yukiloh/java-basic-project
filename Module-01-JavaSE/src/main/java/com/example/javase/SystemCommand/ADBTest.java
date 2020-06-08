@@ -9,7 +9,6 @@ import java.nio.charset.Charset;
 
 public class ADBTest {
     public static void main(String[] args) {
-//        printTerminalMessage("ping www.google.com");
         callADB();
     }
 
@@ -29,32 +28,5 @@ public class ADBTest {
         } catch (AWTException | InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-
-    /*打印终端信息*/
-    private static String printTerminalMessage(String cmd) {
-        StringBuilder result= new StringBuilder();
-        try {
-            Process ps = Runtime.getRuntime().exec(cmd);
-
-            BufferedReader br = new BufferedReader(new InputStreamReader(ps.getInputStream(), Charset.forName("GBK")));
-            String line;
-            while ((line = br.readLine()) != null) {
-                System.out.println(line);
-                result.append(line).append("\n");
-            }
-
-            br.close();
-            System.out.println("close ... ");
-            ps.waitFor();
-            System.out.println("wait over ...");
-
-            return result.toString();
-        } catch (IOException | InterruptedException ioe) {
-            ioe.printStackTrace();
-        }
-        System.out.println("child thread donn");
-        return null;
     }
 }

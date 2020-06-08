@@ -11,7 +11,7 @@ public class SingletonLazy {
     private SingletonLazy() {}
 
     public static SingletonLazy getInstance(){
-        if (instance == null) {                     //校验示例是否为空    //劣等写法：先同步，再判空，99%的时候时不需要进行判空的，所以极其浪费资源
+        if (instance == null) {                     //校验示例是否为空
             synchronized (SingletonLazy.class) {    //为空则同步，再次进行空判断
                 if (instance == null) {
                     instance = new SingletonLazy();
@@ -21,4 +21,5 @@ public class SingletonLazy {
         return instance;
     }
 
+    //不太好的写法:先同步(synchronized),再判空.因为99%的时候时不需要进行同步,因此极其浪费性能
 }

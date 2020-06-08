@@ -1,7 +1,7 @@
 package com.example.javase.Singleton;
 
 /**
- * 饿汉型-立即加载
+ * 饿汉型-立即加载,在jvm启动时便创建
  */
 public class SingletonEager {
 
@@ -25,7 +25,6 @@ public class SingletonEager {
         this.integer = integer;
     }
 
-    //单例中,一般中只有一个实例存在
 }
 
 

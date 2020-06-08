@@ -10,7 +10,7 @@ import java.util.concurrent.*;
  * @author yukiloh
  * @version 0.1
  * @date 2020/6/4 2:31
- * 介绍线程池
+ * 关于线程池的介绍
  */
 public class MyTest {
 
@@ -24,14 +24,16 @@ public class MyTest {
 
         //fixed和cached2个线程池在内部其实实现了ThreadPoolExecutor
         //介绍下内部的参数
-        //    public ThreadPoolExecutor(int corePoolSize,//线程池的核心线程数量
-        //                              int maximumPoolSize,//线程池的最大线程数
-        //                              long keepAliveTime,//当线程数大于核心线程数时，多余的空闲线程存活的最长时间
-        //                              TimeUnit unit,//时间单位
-        //                              BlockingQueue<Runnable> workQueue,//任务队列，用来储存等待执行任务的队列
-        //                              ThreadFactory threadFactory,//线程工厂，用来创建线程，一般默认即可
-        //                              RejectedExecutionHandler handler//拒绝策略，当提交的任务过多而不能及时处理时，我们可以定制策略来处理任务
-        //                               ) {
+        /**
+         *  public ThreadPoolExecutor(int corePoolSize,//线程池的核心线程数量
+         *                            int maximumPoolSize,//线程池的最大线程数
+         *                            long keepAliveTime,//当线程数大于核心线程数时，多余的空闲线程存活的最长时间
+         *                            TimeUnit unit,//时间单位
+         *                            BlockingQueue<Runnable> workQueue,//任务队列，用来储存等待执行任务的队列
+         *                            ThreadFactory threadFactory,//线程工厂，用来创建线程，一般默认即可
+         *                            RejectedExecutionHandler handler//拒绝策略，当提交的任务过多而不能及时处理时，我们可以定制策略来处理任务
+         *                             ) {
+         */
 
 
         //不同于Executors.newFixedThreadPool(1)
@@ -39,7 +41,7 @@ public class MyTest {
         //而single不可以,这才做到了single(他是实现了FinalizableDelegatedExecutorService)
         ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
 
-        System.in.read();   //阻塞线程
+        System.in.read();   //用于阻塞线程
     }
 
     /**
@@ -81,9 +83,9 @@ public class MyTest {
 
 
     /**
-     * 简单实践多线程的意义
-     * sleep(100)模拟io阻塞
-     * 如果没有阻塞,jvm会占用100%系统来处理业务,多线程反而没有单线程快(可以设置循环一万次)
+     * 简单测试多线程的意义
+     * sleep(100): 用于模拟io阻塞
+     * 如果没有阻塞,jvm会占用100%系统来处理业务,此时多线程反而没有单线程快(可以设置循环一万次)
      * 如果存在阻塞,单线程时候会有100ms休眠,而多线程会利用者100ms的休眠切换到其他线程来完成任务(时间可以缩短1/4)
      */
     @Test

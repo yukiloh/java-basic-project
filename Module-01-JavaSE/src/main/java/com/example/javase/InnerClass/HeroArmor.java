@@ -8,6 +8,6 @@ public interface HeroArmor {
 
     //也可以在其中定义默认方法方法
     private void defaultMethod() {
-        System.out.println("default method done!");
+        System.out.println("default instanceMethod done!");
     }
 }

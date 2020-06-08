@@ -8,13 +8,15 @@ import java.util.Random;
 public class TcpServer {
 
     public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(8848);     //新建server端的套接字
+        //新建server端的套接字
+        ServerSocket serverSocket1 = new ServerSocket(8848);
+        ServerSocket serverSocket2 = new ServerSocket(8849);
+
         while (true) {
-            webPageStart(serverSocket);     //开启web页面
-//            serverStart(serverSocket);    //开启上传服务，技术原因，只能开启一个，估计可以靠申请内容来甄别返回内容
-            //都启用了多线程
+            webPageStart(serverSocket1);     //开启web页面
+            serverStart(serverSocket2);      //开启上传服务
         }
-//        serverSocket.close();
+        // serverSocket1.close();   //最后需要关闭端口.因为while(true),不会执行到这一步的
     }
 
 

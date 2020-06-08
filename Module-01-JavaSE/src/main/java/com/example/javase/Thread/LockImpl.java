@@ -2,15 +2,18 @@ package com.example.javase.Thread;
 
 import java.util.concurrent.locks.ReentrantLock;
 
-
-//这是一个展示lock锁的类
+/**
+ * 用于展示ReentrantLock的用法
+ */
 public class LockImpl implements Runnable{
-    ReentrantLock reentrantLock = new ReentrantLock();  //先实例化reentrantLock
+    private ReentrantLock reentrantLock = new ReentrantLock();  //先实例化reentrantLock
     private int times = 0;
 
     @Override
     public void run() {
-        reentrantLock.lock();       //在需要的位置插入lock锁
+        //在需要锁定的位置插入lock锁
+        reentrantLock.lock();
+
         try {
             for (int i = 0; i < 100; i++) {
                 threadUsedLock();
@@ -21,9 +24,9 @@ public class LockImpl implements Runnable{
                     e.printStackTrace();
                 }
             }
-
         } finally {
-            reentrantLock.unlock();    //建议用try&finally的方式来保证unlock的使用
+            //必须使用finally的方式来保证unlock的使用
+            reentrantLock.unlock();
         }
     }
 

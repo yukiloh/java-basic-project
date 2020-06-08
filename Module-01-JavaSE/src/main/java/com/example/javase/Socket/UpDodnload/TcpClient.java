@@ -7,8 +7,6 @@ import java.net.Socket;
 public class TcpClient {
     public static void main(String[] args) throws IOException {
         clientStart();
-
-
     }
 
     private static void clientStart() throws IOException {
@@ -22,14 +20,15 @@ public class TcpClient {
         while ((len = fileInputStream.read(bytes)) != -1){
             outputStream.write(bytes,0,len);
         }
-        socket.shutdownOutput();//关闭输出流
+        socket.shutdownOutput();    //关闭输出流
 
         InputStream inputStream = socket.getInputStream();  //开始接收回传
         while ((len = inputStream.read(bytes)) != -1){      //读取并打印回传
             System.out.println(new String(bytes,0,len));
         }
 
-        inputStream.close();        //关闭流
+        //关闭流
+        inputStream.close();
         outputStream.close();
         fileInputStream.close();
         socket.close();
