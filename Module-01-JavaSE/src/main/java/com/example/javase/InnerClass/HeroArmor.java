@@ -7,7 +7,7 @@ public interface HeroArmor {
     void armorValue();
 
     //也可以在其中定义默认方法方法
-    private void defaultMethod() {
+    default void defaultMethod() {
         System.out.println("default instanceMethod done!");
     }
 }

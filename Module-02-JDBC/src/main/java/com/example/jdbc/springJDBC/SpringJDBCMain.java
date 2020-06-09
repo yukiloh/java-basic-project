@@ -43,9 +43,11 @@ class SpringJDBCMain {
     void testContext2() {
         Integer id = 1;
 
+        //为了测试queryForObject中使用Mapper来指定返回结果
         User user = userDao.getUserById(id);
         System.out.println(user);
 
+        //为了测试queryForObject中使用String.class来指定返回结果
         String username = userDao.getUsernameById(id);
         System.out.println(username);
     }

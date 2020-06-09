@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+<!--    &lt;!&ndash;配置servlet&ndash;&gt;-->
+    <!--因为使用了注解，这里就全部注释-->
+<!--    <servlet>-->
+<!--        <servlet-name>Servlet01QuickStartServlet</servlet-name>&lt;!&ndash;servlet的名字&ndash;&gt;-->
+<!--        <servlet-class>Servlet.Servlet01QuickStartServlet</servlet-class>&lt;!&ndash;所执行的方法的“全类名”&ndash;&gt;-->
+<!--        <load-on-startup>-1</load-on-startup>   &lt;!&ndash;关于init加载的时机：正数和零，服务器启动时；负数：首次访问时。&ndash;&gt;-->
+<!--    </servlet>-->
+<!--    -->
+<!--    <servlet-mapping>   &lt;!&ndash;印射地址&ndash;&gt;-->
+<!--        <servlet-name>Servlet01QuickStartServlet</servlet-name>-->
+<!--        <url-pattern>/webxml</url-pattern>    &lt;!&ndash;访问的路径&ndash;&gt;-->
+<!--    </servlet-mapping>-->
+
+
+</web-app>

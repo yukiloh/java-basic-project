@@ -45,8 +45,8 @@
 
 ### 4. 创建dao层(UserDao)
 
-- 通过set方法来注入数据库信息(dataSource)
+4.1 通过set方法来注入数据库信息(dataSource)
 
-- 编写crud方法
+4.2 编写crud方法
 
 ### 5. 在main方法/测试案例中,通过dao来执行crud方法
