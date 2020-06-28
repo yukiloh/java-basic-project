@@ -1,14 +1,13 @@
-package com.example.leetcode;
+package com.example.sort;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.TreeMap;
 
 public class Other02SortString {
-    /*
-    * 判断字符串，进行分割，将结果排序（TreeMap）
-    * */
-
+    /**
+     * 判断字符串，进行分割，将结果排序（TreeMap）
+     */
 
     @Test
     public void testContext() {

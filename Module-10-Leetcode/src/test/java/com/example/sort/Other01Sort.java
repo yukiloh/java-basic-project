@@ -1,4 +1,4 @@
-package com.example.leetcode;
+package com.example.sort;
 
 import org.junit.jupiter.api.Test;
 
@@ -37,7 +37,9 @@ public class Other01Sort {
     /*基于冒泡和希尔,对一定间隔的2个数进行排序;此处略过*/
 
 
-
+    /**
+     * 选择排序
+     */
     @Test
     /*使用了2个linkedList的集合*/
     public void selectionSort01(){
@@ -100,7 +102,9 @@ public class Other01Sort {
         }
     }
 
-    /*冒泡排序*/
+    /**
+     * 冒泡排序
+     */
     @Test
     public void bubbleSort01(){
         LinkedList<Integer> linkedList = new LinkedList<>(Arrays.asList(9,10, 4, 3, 7,8, 2,6,100,200,1,101,102,202,303,20,25));
@@ -133,12 +137,13 @@ public class Other01Sort {
 
     }
 
-    /*使用数组*/
     @Test
     public void bubbleSort02(){
+        //使用数组
+
         int[] arr = {9,  4, 3, 7, 8, 2, 6, 100, 1,200, 101, 102, 202, 303, 20, 25};
-        Boolean flag = true;
-        while (flag == true){
+        boolean flag = true;
+        while (flag){
             int left;
             int right = 0;
             int min = arr.length/2;
@@ -162,7 +167,7 @@ public class Other01Sort {
         }
     }
 
-    /*用flag判断是否有交换*/
+    //用flag判断是否有交换
     public void bubbleSort03(int[] arr){
         if (arr.length <= 1) return;                        //如果只有一个元素就不用排序了
         for (int i = 0; i < arr.length; ++i) {
@@ -182,8 +187,9 @@ public class Other01Sort {
     }
 
 
-
-    /*插入排序*/    /*优化后*/
+    /**
+     * 插入排序
+     */
     public void insertionSort(int[] arr){
         for (int right = 1; right < arr.length; right++) {
             int temp = arr[right];                                              /*提升temp的作用域,没必要在内层new*/
@@ -346,8 +352,6 @@ public class Other01Sort {
         for (int i = left; i <=right; i++)      //复制回原素组
             a[i]=tmp[i];
     }
-
-
 
 
     /*测试各种排序的速度*/
