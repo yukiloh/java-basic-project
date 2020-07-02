@@ -4,11 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import java.util.TreeMap;
 
-public class Other02SortString {
+public class Sort02SortString {
+
     /**
      * 判断字符串，进行分割，将结果排序（TreeMap）
      */
-
     @Test
     public void testContext() {
         String s = "11一一121一二一65六五1一";
