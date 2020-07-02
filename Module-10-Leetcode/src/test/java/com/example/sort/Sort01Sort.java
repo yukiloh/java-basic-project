@@ -7,16 +7,6 @@ import java.util.Random;
 
 
 public class Sort01Sort {
-    /*5.快速排序*/
-    /**/
-
-    /*6.堆排序*/   /*heapSort*/
-
-
-    /*7.归并排序*/  /*doMergeSort*/
-    /**/
-
-
 
     /**
      * 记录常用的一些排序方法
