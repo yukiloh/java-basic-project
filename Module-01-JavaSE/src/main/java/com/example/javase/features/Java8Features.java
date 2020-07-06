@@ -6,11 +6,17 @@ import java.time.Clock;
 import java.time.Instant;
 import java.util.Date;
 
-class JavaSE8Features implements SE8TestInterface{
+class Java8Features implements Java8TestInterface {
+
+    /**
+     * 列举了JAVA8的特性
+     */
+
+    //1. 接口中使用静态方法(类似于抽象类中的default)
     @Override
     public void showInt(int a) {
         //调用静态方法
-        if (a==0) a = SE8TestInterface.initInt();
+        if (a==0) a = Java8TestInterface.initInt();
 
         System.out.println(a);
 
@@ -28,7 +34,7 @@ class JavaSE8Features implements SE8TestInterface{
 
 
 
-    //函数式接口
+    //2. 函数式接口的注解
     @FunctionalInterface
     interface Converter<F, T> {
         //函数式接口中的方法只能有一个抽象方法,多个则会报错
@@ -72,8 +78,8 @@ class JavaSE8Features implements SE8TestInterface{
 
 
 
-    //clock,用于替代原来的currentTimeMillis
-    //如果需要严格判断时区再来研究吧
+    //3. clock,用于替代原来的currentTimeMillis
+    //一般用于需要判断时区的时候
     @Test
     void clock() {
         //这俩一样
@@ -88,4 +94,6 @@ class JavaSE8Features implements SE8TestInterface{
 
 
     }
+
+
 }

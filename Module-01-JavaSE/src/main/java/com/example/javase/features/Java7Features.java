@@ -4,11 +4,15 @@ import org.junit.jupiter.api.Test;
 
 import java.io.*;
 
-class JavaSE7Features {
+class Java7Features {
 
+    /**
+     * 列举了一些1.7的特性
+     */
     @Test
     void num() {
-        // 1.7的特性,方便阅读,本身无意义
+        // 数字中插入_
+        // 方便阅读,本身无意义
         // 不可以将_加载首尾(包括1._01也是非法的)
         int a = 1_145_141_919;
         System.out.println(a);

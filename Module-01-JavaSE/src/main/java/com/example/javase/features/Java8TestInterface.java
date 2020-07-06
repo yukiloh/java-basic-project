@@ -1,6 +1,6 @@
 package com.example.javase.features;
 
-public interface SE8TestInterface {
+public interface Java8TestInterface {
     void showInt(int a);
 
     //默认方法,也称为扩展方法
